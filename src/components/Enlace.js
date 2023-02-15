@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 export const Enlace = ({ enlace, user }) => {
-  console.log(enlace);
   return (
     <article>
       <p>
@@ -17,7 +16,11 @@ export const Enlace = ({ enlace, user }) => {
       ) : null}
       <p>
         Creado por
-        <Link to={`/Enlace/${enlace.idAutor}`}>{enlace.idAutor}</Link> el
+        <Link to={`/Enlace/${enlace.nombreUsuario}`}>
+          {" "}
+          {enlace.nombreUsuario}
+        </Link>{" "}
+        el
         <Link to={`/Enlace/${enlace.id}`}>
           {new Date(enlace.fecha).toLocaleString()}
         </Link>

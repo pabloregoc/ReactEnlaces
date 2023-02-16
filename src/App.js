@@ -9,6 +9,7 @@ import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { Enlace } from "./components/Enlace";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/enlace/:id" element={<p>enlace con id</p>} />
+        <Route path="/enlace/:id" element={<p>{Enlace}</p>} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="*" element={<NotFoundPage />} />

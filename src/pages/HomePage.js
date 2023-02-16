@@ -6,7 +6,7 @@ import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
 
 const HomePage = () => {
-  const { enlaces, loading, error } = useEnlaces();
+  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
   const { user } = useContext(AuthContext);
 
   if (loading) return <p> Cargando enlaces...</p>;
@@ -14,10 +14,10 @@ const HomePage = () => {
 
   return (
     <section>
-      <h1> Nuevos enlaces</h1>
-      {user ? <NewEnlace /> : null}
+      {user ? <NewEnlace addEnlace={addEnlace} /> : null}
 
-      <ListaEnlaces enlaces={enlaces} />
+      <h1> Nuevos enlaces</h1>
+      <ListaEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
     </section>
   );
 };

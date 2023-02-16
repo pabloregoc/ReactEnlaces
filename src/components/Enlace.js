@@ -1,22 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
 import { deleteEnlaceService } from "../services";
 
 export const Enlace = ({ enlace, removeEnlace }) => {
+  const navigate = useNavigate();
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
 
   const deleteEnlace = async (id) => {
     try {
       await deleteEnlaceService({ id, token });
-      removeEnlace(id);
+      if (removeEnlace) {
+        removeEnlace(id);
+      } else {
+        navigate("/");
+      }
     } catch (error) {
       setError(error.message);
     }
   };
-  console.log(enlace);
+
   return (
     <article>
       <p>
@@ -33,10 +38,11 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
       <p>
         Creado por
-        <Link to={`/Enlace/${enlace.id}`}> {enlace.nombreUsuario}</Link> el
-        <Link to={`/Enlace/${enlace.id}`}>
-          {new Date(enlace.fecha).toLocaleString()}
-        </Link>
+        <Link to={`/usuarios/${enlace.idAutor}`}>
+          {" "}
+          {enlace.nombreUsuario}
+        </Link>{" "}
+        el {new Date(enlace.fecha).toLocaleString()}
       </p>
 
       {user && user.user[0].id === enlace.idAutor ? (

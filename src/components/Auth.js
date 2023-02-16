@@ -7,7 +7,10 @@ const Auth = () => {
 
   return user ? (
     <p>
-      estas conectado {user.user[0].nombreUsuario}
+      estas conectado{" "}
+      <Link to={`/usuarios/${user.user[0].id}`}>
+        {user.user[0].nombreUsuario}
+      </Link>
       <button onClick={() => logout()}> Cerrar sesión</button>
     </p>
   ) : (
@@ -22,3 +25,4 @@ const Auth = () => {
   );
 };
 export default Auth;
+//{user.user[0].nombreUsuario}

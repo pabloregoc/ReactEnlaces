@@ -10,10 +10,11 @@ const EnlacePage = () => {
 
   if (loading) return <p> Cargando enlaces...</p>;
   if (error) return <ErrorMessage message={error} />;
+
   return (
     <section>
       <h1> Nuevos enlace</h1>
-      <Enlace enlace={enlace} />
+      <Enlace enlace={enlace.Enlaces.id} />
     </section>
   );
 };

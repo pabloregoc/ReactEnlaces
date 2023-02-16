@@ -1,15 +1,14 @@
-/* eslint-disable react/react-in-jsx-scope */
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
+import EnlacePage from "./pages/EnlacePage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import { Enlace } from "./components/Enlace";
+import { UsuarioPage } from "./pages/UsuarioPage";
 
 function App() {
   return (
@@ -17,9 +16,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/enlace/:id" element={<p>{Enlace}</p>} />
+        <Route path="/enlace/:id" element={<EnlacePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/usuarios" element={<UsuarioPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

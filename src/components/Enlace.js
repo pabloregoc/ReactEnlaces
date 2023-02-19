@@ -24,7 +24,8 @@ export const Enlace = ({ enlace, removeEnlace }) => {
     }
   };
 
-  const voto = async (id) => {
+  const voto = async (enlace) => {
+    const {id} = enlace
     if (!user) return alert('Necesitas estar logueado para votar')
     try {
       await enlaceVotoNuevo({ id, token });
@@ -34,7 +35,8 @@ export const Enlace = ({ enlace, removeEnlace }) => {
     }
   };
 
-  const eliminaVoto = async (id) => {
+  const eliminaVoto = async (enlace) => {
+    const {id} = enlace
     try {
       await enlaceVotoElimina({ id, token });
       setEsVotado(false)
@@ -68,11 +70,11 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       <p>
         Vota
         {!!esVotado ? (
-          <button onClick={() => eliminaVoto(enlace.id)}>
+          <button onClick={() => eliminaVoto(enlace)}>
             ELIMINA
           </button>
         ) : (
-          <button onClick={() => voto(enlace.id)}>
+          <button onClick={() => voto(enlace)}>
             👍
           </button>
         )}

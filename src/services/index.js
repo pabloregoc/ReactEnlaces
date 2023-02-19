@@ -7,7 +7,7 @@ export const enlaceVotoNuevo = async ({ id, token }) => {
     }
   );
   if (!response.ok) {
-    throw new Error(json.message);
+    throw new Error();
   }
 };
 
@@ -20,7 +20,7 @@ export const enlaceVotoElimina = async ({ valoracion, id, token }) => {
     }
   );
   if (!response.ok) {
-    throw new Error(json.message);
+    throw new Error();
   }
 };
 

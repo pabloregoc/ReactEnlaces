@@ -6,8 +6,8 @@ import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
 
 const HomePage = () => {
-  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces();
-  const { user } = useContext(AuthContext);
+  const { user, token } = useContext(AuthContext);
+  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces(token);
 
   if (loading) return <p> Cargando enlaces...</p>;
   if (error) return <ErrorMessage message={error} />;
@@ -15,7 +15,6 @@ const HomePage = () => {
   return (
     <section>
       {user ? <NewEnlace addEnlace={addEnlace} /> : null}
-
       <h1> Nuevos enlaces</h1>
       <ListaEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
     </section>

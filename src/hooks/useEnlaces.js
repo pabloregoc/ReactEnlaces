@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { listaEnlacesService } from "../services";
 
-const useEnlaces = () => {
+const useEnlaces = (token) => {
   const [enlaces, setEnlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -10,8 +10,7 @@ const useEnlaces = () => {
     const loadEnlaces = async () => {
       try {
         setLoading(true);
-        const data = await listaEnlacesService();
-
+        const data = await listaEnlacesService(token);
         setEnlaces(data);
       } catch (error) {
         setError(error.message);

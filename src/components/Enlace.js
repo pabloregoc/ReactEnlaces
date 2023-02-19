@@ -2,12 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
-import { deleteEnlaceService } from "../services";
+import { deleteEnlaceService, enlaceVotoNuevo, enlaceVotoElimina } from "../services";
 
 export const Enlace = ({ enlace, removeEnlace }) => {
   const navigate = useNavigate();
   const { user, token } = useContext(AuthContext);
   const [error, setError] = useState("");
+
+  const [esVotado, setEsVotado] = useState(!!enlace.VotadosPorMi);
 
   const deleteEnlace = async (id) => {
     try {
@@ -17,6 +19,25 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       } else {
         navigate("/");
       }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const voto = async (id) => {
+    if (!user) return alert('Necesitas estar logueado para votar')
+    try {
+      await enlaceVotoNuevo({ id, token });
+      setEsVotado(true)
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const eliminaVoto = async (id) => {
+    try {
+      await enlaceVotoElimina({ id, token });
+      setEsVotado(false)
     } catch (error) {
       setError(error.message);
     }
@@ -44,8 +65,20 @@ export const Enlace = ({ enlace, removeEnlace }) => {
         </Link>{" "}
         el {new Date(enlace.fecha).toLocaleString()}
       </p>
+      <p>
+        Vota
+        {!!esVotado ? (
+          <button onClick={() => eliminaVoto(enlace.id)}>
+            ELIMINA
+          </button>
+        ) : (
+          <button onClick={() => voto(enlace.id)}>
+            👍
+          </button>
+        )}
+      </p>
 
-      {user && user.user[0].id === enlace.idAutor ? (
+      {user && user.user.id === enlace.idAutor ? (
         <button
           onClick={() => {
             if (window.confirm("¿Seguro que quieres borrar el enlace?"))

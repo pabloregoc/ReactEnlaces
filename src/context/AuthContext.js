@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { getUsuarioService } from "../services";
+import { getOwnUsuarioDataService } from "../services";
 
 export const AuthContext = createContext();
 export const AuthProviderComponent = ({ children }) => {
@@ -12,7 +12,7 @@ export const AuthProviderComponent = ({ children }) => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const data = await getUsuarioService({ token });
+        const data = await getOwnUsuarioDataService({ token });
         setUser(data);
       } catch (error) {
         logout();
@@ -29,10 +29,15 @@ export const AuthProviderComponent = ({ children }) => {
   const logout = () => {
     setToken("");
     setUser(null);
+    window.location.reload();
+  };
+
+  const goToProfile = () => {
+    window.location.href = `/usuarios/yo`;
   };
 
   return (
-    <AuthContext.Provider value={{ token, user, login, logout }}>
+    <AuthContext.Provider value={{ token, user, login, logout, goToProfile }}>
       {children}
     </AuthContext.Provider>
   );

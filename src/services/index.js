@@ -1,5 +1,38 @@
-export const listaEnlacesService = async () => {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND}/Enlaces`);
+export const enlaceVotoNuevo = async ({ id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}/votos`,
+    {
+      method: "POST",
+      headers: { Authorization: token },
+    }
+  );
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+
+export const enlaceVotoElimina = async ({ valoracion, id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}/votos`,
+    {
+      method: "DELETE",
+      headers: { Authorization: token }
+    }
+  );
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+
+export const listaEnlacesService = async (token) => {
+  let options = {};
+  if (token) {
+    options = {
+      headers: { Authorization: token },
+    };
+  }
+
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/Enlaces`, options);
   const json = await response.json();
   if (!response.ok) {
     throw new Error(json.message);
@@ -70,6 +103,18 @@ export const getUsuarioDataService = async ({ id, token }) => {
   const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios`, {
     headers: { Authorization: token },
     body: id,
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getOwnUsuarioDataService = async ({ id, token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios/yo`, {
+    headers: { Authorization: token }
   });
   const json = await response.json();
 

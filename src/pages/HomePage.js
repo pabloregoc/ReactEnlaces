@@ -4,6 +4,7 @@ import { NewEnlace } from "../components/NewEnlace";
 import { ListaEnlaces } from "../components/ListaEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
+import "../pages/HomePage.css"
 
 const HomePage = () => {
   const { user, token } = useContext(AuthContext);

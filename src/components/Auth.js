@@ -1,20 +1,29 @@
+
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import avatarFoto from "../images/avatar.jpg";
 
 const Auth = () => {
   const { user, logout, goToProfile } = useContext(AuthContext);
+  
   return user ? (
     <p>
-      estas conectado{" "}
-      <Link to={`/usuarios/${user.user.id}`}>
+      Estás conectado{" "}
+      
         {user.user.nombreUsuario}
-      </Link>
-      <img 
+        {" "}
+      
+      {user.user.foto ? (<img 
         src={`${process.env.REACT_APP_BACKEND}/${user.user.foto}`}
         alt="foto"
         style={{ width: `50px` }}
-      ></img>
+      ></img>) : (<img 
+        src={avatarFoto}
+        alt="foto"
+        style={{ width: `50px` }}
+      ></img>)}
+      {" "}
       <button onClick={() => goToProfile()}> Ir a mi perfil</button>
       <button onClick={() => logout()}> Cerrar sesión</button>
     </p>

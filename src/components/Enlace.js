@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
 import { deleteEnlaceService, enlaceVotoNuevo, enlaceVotoElimina } from "../services";
 
+
 export const Enlace = ({ enlace, removeEnlace }) => {
   const navigate = useNavigate();
   const { user, token } = useContext(AuthContext);
@@ -61,10 +62,11 @@ export const Enlace = ({ enlace, removeEnlace }) => {
       ) : null}
       <p>
         Creado por
-        <Link to={`/usuarios/${enlace.idAutor}`}>
+      
           {" "}
-          {enlace.nombreUsuario}
-        </Link>{" "}
+          {enlace.nombreUsuario} 
+          {" "}
+
         el {new Date(enlace.fecha).toLocaleString()}
       </p>
       <p>

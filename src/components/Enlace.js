@@ -2,8 +2,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useState } from "react";
-import { deleteEnlaceService, enlaceVotoNuevo, enlaceVotoElimina } from "../services";
-
+import {
+  deleteEnlaceService,
+  enlaceVotoNuevo,
+  enlaceVotoElimina,
+} from "../services";
 
 export const Enlace = ({ enlace, removeEnlace }) => {
   const navigate = useNavigate();
@@ -26,21 +29,21 @@ export const Enlace = ({ enlace, removeEnlace }) => {
   };
 
   const voto = async (enlace) => {
-    const {id} = enlace
-    if (!user) return alert('Necesitas estar logueado para votar')
+    const { id } = enlace;
+    if (!user) return alert("Necesitas estar logueado para votar");
     try {
       await enlaceVotoNuevo({ id, token });
-      setEsVotado(true)
+      setEsVotado(true);
     } catch (error) {
       setError(error.message);
     }
   };
 
   const eliminaVoto = async (enlace) => {
-    const {id} = enlace
+    const { id } = enlace;
     try {
       await enlaceVotoElimina({ id, token });
-      setEsVotado(false)
+      setEsVotado(false);
     } catch (error) {
       setError(error.message);
     }
@@ -52,7 +55,7 @@ export const Enlace = ({ enlace, removeEnlace }) => {
         <h1>{enlace.titulo}</h1>
       </p>
       <p>{enlace.descripcion}</p>
-      <p>{enlace.URL}</p>
+      <a href={enlace.URL}>{enlace.URL}</a>
 
       {enlace.foto ? (
         <img
@@ -61,24 +64,15 @@ export const Enlace = ({ enlace, removeEnlace }) => {
         />
       ) : null}
       <p>
-        Creado por
-      
-          {" "}
-          {enlace.nombreUsuario} 
-          {" "}
-
-        el {new Date(enlace.fecha).toLocaleString()}
+        Creado por {enlace.nombreUsuario} el{" "}
+        {new Date(enlace.fecha).toLocaleString()}
       </p>
       <p>
         Vota
         {!!esVotado ? (
-          <button onClick={() => eliminaVoto(enlace)}>
-            ELIMINA
-          </button>
+          <button onClick={() => eliminaVoto(enlace)}>ELIMINA</button>
         ) : (
-          <button onClick={() => voto(enlace)}>
-            👍
-          </button>
+          <button onClick={() => voto(enlace)}>👍</button>
         )}
       </p>
 

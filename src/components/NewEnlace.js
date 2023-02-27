@@ -26,19 +26,19 @@ export const NewEnlace = ({ addEnlace }) => {
   return (
     <form onSubmit={handleForm}>
       <h1>Agregar nuevo enlace</h1>
-      <fieldstet>
+      <fieldstet class="titulo">
         <label htmlFor="text">Titulo</label>
         <input type="text" id="titulo" name="titulo" required></input>
       </fieldstet>
-      <fieldstet>
-        <label htmlFor="text">Descripción</label>
+      <fieldstet class="descripcion">
+        <label htmlFor="textarea">Descripción</label>
         <input type="text" id="descripcion" name="descripcion" required></input>
       </fieldstet>
-      <fieldstet>
+      <fieldstet class="url">
         <label htmlFor="text">URL</label>
         <input type="text" id="URL" name="URL" required></input>
       </fieldstet>
-      <fieldstet>
+      <fieldstet class="image">
         <label htmlFor="image">Foto</label>
         <input
           type="file"

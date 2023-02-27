@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
@@ -6,26 +5,33 @@ import avatarFoto from "../images/avatar.jpg";
 
 const Auth = () => {
   const { user, logout, goToProfile } = useContext(AuthContext);
-  
+
   return user ? (
     <p>
-      Estás conectado{" "}
-      
-        {user.user.nombreUsuario}
-        {" "}
-      
-      {user.user.foto ? (<img 
-        src={`${process.env.REACT_APP_BACKEND}/${user.user.foto}`}
-        alt="foto"
-        style={{ width: `15vw` }}
-      ></img>) : (<img 
-        src={avatarFoto}
-        alt="foto"
-        style={{ width: `15vw` }}
-      ></img>)}
-      {" "}
-      <button onClick={() => goToProfile()}> Ir a mi perfil</button>
-      <button onClick={() => logout()}> Cerrar sesión</button>
+      {user.user.foto ? (
+        <p class="avatar">
+          <img
+            src={`${process.env.REACT_APP_BACKEND}/${user.user.foto}`}
+            alt="foto"
+            class="ppic"
+          ></img>
+        </p>
+      ) : (
+        <p class="avatar">
+          <img src={avatarFoto} alt="foto" class="ppic"></img>
+        </p>
+      )}{" "}
+      Estás conectado {user.user.nombreUsuario}{" "}
+      <p class="botones">
+        <button onClick={() => goToProfile()} class="boton">
+          {" "}
+          Ir a mi perfil
+        </button>
+        <button onClick={() => logout()} class="boton">
+          {" "}
+          Cerrar sesión
+        </button>
+      </p>{" "}
     </p>
   ) : (
     <ul>

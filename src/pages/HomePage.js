@@ -4,11 +4,12 @@ import { NewEnlace } from "../components/NewEnlace";
 import { ListaEnlaces } from "../components/ListaEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
-import "../pages/HomePage.css"
+import "./HomePage.css";
 
 const HomePage = () => {
   const { user, token } = useContext(AuthContext);
-  const { enlaces, loading, error, addEnlace, removeEnlace } = useEnlaces(token);
+  const { enlaces, loading, error, addEnlace, removeEnlace } =
+    useEnlaces(token);
 
   if (loading) return <p> Cargando enlaces...</p>;
   if (error) return <ErrorMessage message={error} />;

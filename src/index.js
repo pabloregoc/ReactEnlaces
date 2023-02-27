@@ -1,23 +1,156 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { AuthProviderComponent } from "./context/AuthContext";
+export const enlaceVotoNuevo = async ({ id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}/votos`,
+    {
+      method: "POST",
+      headers: { Authorization: token },
+    }
+  );
+  if (!response.ok) {
+    throw new Error();
+  }
+};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AuthProviderComponent>
-        <App />
-      </AuthProviderComponent>
-    </BrowserRouter>
-  </React.StrictMode>
-);
+export const enlaceVotoElimina = async ({ valoracion, id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}/votos`,
+    {
+      method: "DELETE",
+      headers: { Authorization: token }
+    }
+  );
+  if (!response.ok) {
+    throw new Error();
+  }
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export const listaEnlacesService = async (token) => {
+  let options = {};
+  if (token) {
+    options = {
+      headers: { Authorization: token },
+    };
+  }
+
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/Enlaces`, options);
+  const json = await response.json();
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data.enlaces;
+};
+
+export const enlaceConcreto = async (id) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}`
+  );
+  const json = await response.json();
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const registerUsuarioService = async ({
+  email,
+  nombreUsuario,
+  password,
+}) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, nombreUsuario, password }),
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+export const loginUsuarioService = async ({ email, password }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/usuarios/login/`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    }
+  );
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getUsuarioService = async ({ token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios`, {
+    headers: { Authorization: token },
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getUsuarioDataService = async ({ id, token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios`, {
+    headers: { Authorization: token },
+    body: id,
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const getOwnUsuarioDataService = async ({ id, token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/usuarios/yo`, {
+    headers: { Authorization: token }
+  });
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const sendEnlaceService = async ({ data, token }) => {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND}/Enlaces`, {
+    method: "POST",
+    headers: { Authorization: token },
+    body: data,
+  });
+
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};
+
+export const deleteEnlaceService = async ({ id, token }) => {
+  const response = await fetch(
+    `${process.env.REACT_APP_BACKEND}/Enlaces/${id}`,
+    {
+      method: "DELETE",
+      headers: { Authorization: token },
+    }
+  );
+  const json = await response.json();
+
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+  return json.data;
+};

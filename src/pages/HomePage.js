@@ -4,10 +4,7 @@ import { NewEnlace } from "../components/NewEnlace";
 import { ListaEnlaces } from "../components/ListaEnlaces";
 import { AuthContext } from "../context/AuthContext";
 import useEnlaces from "../hooks/useEnlaces";
-
 import "../pages/HomePage.css";
-
-import "./HomePage.css";
 
 const HomePage = () => {
   const { user, token } = useContext(AuthContext);
@@ -20,7 +17,7 @@ const HomePage = () => {
   return (
     <section>
       {user ? <NewEnlace addEnlace={addEnlace} /> : null}
-      <h1> Nuevos enlaces</h1>
+      <h1 class="cabecera"> Nuevos enlaces</h1>
       <ListaEnlaces enlaces={enlaces} removeEnlace={removeEnlace} />
     </section>
   );

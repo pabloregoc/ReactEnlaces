@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { loginUsuarioService } from "../services/index";
+import "../pages/LoginPage.css";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ export const LoginPage = () => {
   };
   return (
     <section>
-      <h1>Acceso</h1>
+      <h1 class="cabecera">Acceso</h1>
       <form onSubmit={handleForm}>
         <fieldset>
           <label htmlFor="email"> Email</label>

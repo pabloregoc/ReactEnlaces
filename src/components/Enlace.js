@@ -68,16 +68,15 @@ export const Enlace = ({ enlace, removeEnlace }) => {
         {new Date(enlace.fecha).toLocaleString()}
       </p>
       <p>
-        Vota
         {!!esVotado ? (
-          <button onClick={() => eliminaVoto(enlace)}>ELIMINA</button>
+          <button class="red" onClick={() => eliminaVoto(enlace)}>Ya no me gusta</button>
         ) : (
-          <button onClick={() => voto(enlace)}>👍</button>
+          <button class="bform" onClick={() => voto(enlace)}>👍</button>
         )}
       </p>
 
       {user && user.user.id === enlace.idAutor ? (
-        <button
+        <button class="red" 
           onClick={() => {
             if (window.confirm("¿Seguro que quieres borrar el enlace?"))
               deleteEnlace(enlace.id);

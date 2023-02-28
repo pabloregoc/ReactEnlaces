@@ -20,8 +20,8 @@ const Auth = () => {
         <p class="avatar">
           <img src={avatarFoto} alt="foto" class="ppic"></img>
         </p>
-      )}{" "}
-      Estás conectado {user.user.nombreUsuario}{" "}
+      )}{" "}<p id="conectado">
+      Estás conectado {user.user.nombreUsuario}{" "}</p>
       <p class="botones">
         <button onClick={() => goToProfile()} class="boton">
           {" "}

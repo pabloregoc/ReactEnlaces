@@ -25,18 +25,18 @@ export const NewEnlace = ({ addEnlace }) => {
   };
   return (
     <form onSubmit={handleForm}>
-      <h1>Agregar nuevo enlace</h1>
+      <h1 class="cabecera">Agregar nuevo enlace</h1>
       <fieldstet class="titulo">
-        <label htmlFor="text">Titulo</label>
-        <input type="text" id="titulo" name="titulo" required></input>
+        <label htmlFor="text" class="placeholder"></label>
+        <input type="text" id="titulo" name="titulo" class="placeholder" placeholder="Título" required></input>
       </fieldstet>
       <fieldstet class="descripcion">
-        <label htmlFor="textarea">Descripción</label>
-        <input type="text" id="descripcion" name="descripcion" required></input>
+        <label htmlFor="textarea" class="placeholder"></label>
+        <input type="text" id="descripcion" name="descripcion"class="placeholder" placeholder="Descripción" required></input>
       </fieldstet>
       <fieldstet class="url">
-        <label htmlFor="text">URL</label>
-        <input type="text" id="URL" name="URL" required></input>
+        <label htmlFor="text" class="placeholder"></label>
+        <input type="text" id="URL" name="URL" placeholder="URL" class="placeholder" required></input>
       </fieldstet>
       <fieldstet class="image">
         <label htmlFor="image">Foto</label>
@@ -57,7 +57,7 @@ export const NewEnlace = ({ addEnlace }) => {
           </figure>
         ) : null}
       </fieldstet>
-      <button>Publicar</button>
+      <button class="bform">Publicar</button>
       {sending ? <p>Enlace enviado</p> : null}
       {error ? <p>{error}</p> : null}
     </form>

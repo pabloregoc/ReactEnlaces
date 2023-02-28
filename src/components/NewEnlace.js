@@ -28,7 +28,13 @@ export const NewEnlace = ({ addEnlace }) => {
       <h1>Agregar nuevo enlace</h1>
       <fieldstet class="titulo">
         <label htmlFor="text">Titulo</label>
-        <input type="text" id="titulo" name="titulo" required></input>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          paclehordel="Título"
+          required
+        ></input>
       </fieldstet>
       <fieldstet class="descripcion">
         <label htmlFor="textarea">Descripción</label>

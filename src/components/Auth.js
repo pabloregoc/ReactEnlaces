@@ -35,10 +35,11 @@ const Auth = () => {
     </p>
   ) : (
     <ul class="nolog">
-      <li>
+      <li class="nologli">
         <Link to={"/register"}>Registro</Link>
       </li>
-      <li>
+
+      <li class="nologli">
         <Link to={"/login"}>Acceso</Link>
       </li>
     </ul>

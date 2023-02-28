@@ -20,8 +20,8 @@ const Auth = () => {
         <p class="avatar">
           <img src={avatarFoto} alt="foto" class="ppic"></img>
         </p>
-      )}{" "}<p id="conectado">
-      Estás conectado {user.user.nombreUsuario}{" "}</p>
+      )}{" "}
+      <p id="conectado">Estás conectado {user.user.nombreUsuario} </p>
       <p class="botones">
         <button onClick={() => goToProfile()} class="boton">
           {" "}
@@ -34,7 +34,7 @@ const Auth = () => {
       </p>{" "}
     </p>
   ) : (
-    <ul>
+    <ul class="nolog">
       <li>
         <Link to={"/register"}>Registro</Link>
       </li>

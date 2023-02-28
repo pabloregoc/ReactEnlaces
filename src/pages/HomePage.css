@@ -13,17 +13,16 @@ header {
 header > h1 {
   display: flex;
   justify-content: center;
-
-  font-size: 7vw;
-  font-style: italic;
+  font-size: 3.5vw;
+}
+.nolog {
+  font-size: 3vw;
 }
 header > nav {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-style: italic;
-  font-size: 3vw;
+  font-size: 15vw;
   margin-bottom: 2vw;
 }
 .avatar {
@@ -31,8 +30,8 @@ header > nav {
   justify-content: center;
 }
 .ppic {
-  width: 8vw;
-  height: 8vw;
+  width: 5vw;
+  height: 5vw;
   border-radius: 100%;
   border: 3px solid black;
 }
@@ -72,7 +71,7 @@ button {
   border: 2px solid #008cba;
 }
 button:hover {
-  background-color: #FFF;
+  background-color: #fff;
   color: #5b6380;
 }
 .botones {
@@ -96,4 +95,6 @@ form {
 #image {
   width: 50vw;
 }
-
+ul {
+  width: 60vh;
+}

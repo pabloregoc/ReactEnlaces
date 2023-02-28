@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUsuarioService } from "../services";
-
+import "../pages/RegisterPage.css";
 const RegisterPage = () => {
   const navigate = useNavigate();
 
@@ -35,7 +35,7 @@ const RegisterPage = () => {
     <section>
       <h1>Registro</h1>
       <form onSubmit={handleForm}>
-        <fieldset>
+        <fieldset class="registrop">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -45,7 +45,7 @@ const RegisterPage = () => {
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </fieldset>
-        <fieldset>
+        <fieldset class="registrop">
           <label htmlFor="nombre">Nombre</label>
           <input
             type="name"
@@ -55,7 +55,7 @@ const RegisterPage = () => {
             onChange={(e) => setNombre(e.target.value)}
           ></input>
         </fieldset>
-        <fieldset>
+        <fieldset class="registrop">
           <label htmlFor="password1">password</label>
           <input
             type="password"
@@ -65,7 +65,7 @@ const RegisterPage = () => {
             onChange={(e) => setPassword1(e.target.value)}
           ></input>
         </fieldset>
-        <fieldset>
+        <fieldset class="registrop">
           <label htmlFor="password2">Repetir password</label>
           <input
             type="password"
@@ -75,7 +75,7 @@ const RegisterPage = () => {
             onChange={(e) => setPassword2(e.target.value)}
           ></input>
         </fieldset>
-        <button>Resgistrarme</button>
+        <button class="bform">Resgistrarme</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

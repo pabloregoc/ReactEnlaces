@@ -55,7 +55,6 @@ export const Enlace = ({ enlace, removeEnlace }) => {
         <h1>{enlace.titulo}</h1>
       </p>
       <p>{enlace.descripcion}</p>
-      <a href={enlace.URL}>{enlace.URL}</a>
 
       {enlace.foto ? (
         <img
@@ -63,20 +62,27 @@ export const Enlace = ({ enlace, removeEnlace }) => {
           alt={enlace.titulo}
         />
       ) : null}
+      <br />
+      <a href={enlace.URL}>{enlace.URL}</a>
       <p>
         Creado por {enlace.nombreUsuario} el{" "}
         {new Date(enlace.fecha).toLocaleString()}
       </p>
       <p>
         {!!esVotado ? (
-          <button class="red" onClick={() => eliminaVoto(enlace)}>Ya no me gusta</button>
+          <button class="red" onClick={() => eliminaVoto(enlace)}>
+            Ya no me gusta
+          </button>
         ) : (
-          <button class="bform" onClick={() => voto(enlace)}>👍</button>
+          <button class="bform" onClick={() => voto(enlace)}>
+            👍
+          </button>
         )}
       </p>
 
       {user && user.user.id === enlace.idAutor ? (
-        <button class="red" 
+        <button
+          class="red"
           onClick={() => {
             if (window.confirm("¿Seguro que quieres borrar el enlace?"))
               deleteEnlace(enlace.id);

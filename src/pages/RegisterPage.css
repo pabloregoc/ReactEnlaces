@@ -1,0 +1,23 @@
+.registrop {
+  border: 0px;
+}
+.bform {
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+header > h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 7vw;
+}
+header > nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3vw;
+  margin-bottom: 2vw;
+}

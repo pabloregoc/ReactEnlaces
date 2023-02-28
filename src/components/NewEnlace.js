@@ -27,8 +27,19 @@ export const NewEnlace = ({ addEnlace }) => {
     <form onSubmit={handleForm}>
       <h1 class="cabecera">Agregar nuevo enlace</h1>
       <fieldstet class="titulo">
+
         <label htmlFor="text" class="placeholder"></label>
         <input type="text" id="titulo" name="titulo" class="placeholder" placeholder="Título" required></input>
+
+        <label htmlFor="text">Titulo</label>
+        <input
+          type="text"
+          id="titulo"
+          name="titulo"
+          paclehordel="Título"
+          required
+        ></input>
+
       </fieldstet>
       <fieldstet class="descripcion">
         <label htmlFor="textarea" class="placeholder"></label>

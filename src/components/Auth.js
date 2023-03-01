@@ -21,11 +21,11 @@ const Auth = () => {
           <img src={avatarFoto} alt="foto" class="ppic"></img>
         </p>
       )}{" "}
-      <p id="conectado">Estás conectado {user.user.nombreUsuario} </p>
+      <p id="conectado">Estás conectado, {user.user.nombreUsuario} </p>
       <p class="botones">
         <button onClick={() => goToProfile()} class="boton">
           {" "}
-          Ir a mi perfil
+          Modificar perfil
         </button>
         <button onClick={() => logout()} class="boton">
           {" "}

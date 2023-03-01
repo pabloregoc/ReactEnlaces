@@ -56,7 +56,7 @@ const RegisterPage = () => {
           ></input>
         </fieldset>
         <fieldset class="registrop">
-          <label htmlFor="password1">Password</label>
+          <label htmlFor="password1">Contraseña</label>
           <input
             type="password"
             id="password1"
@@ -66,7 +66,7 @@ const RegisterPage = () => {
           ></input>
         </fieldset>
         <fieldset class="registrop">
-          <label htmlFor="password2">Repetir password</label>
+          <label htmlFor="password2">Repetir contraseña</label>
           <input
             type="password"
             id="password2"

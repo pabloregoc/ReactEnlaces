@@ -62,14 +62,15 @@ export const UsuarioYoPage = () => {
           ></input>
         </fieldset>
         <fieldset class="registrop">
-          <label htmlFor="password1">Password</label>
+          <label htmlFor="password1">Contraseña</label>
           <input type="password" id="password1" name="password1"></input>
         </fieldset>
         <fieldset class="registrop">
-          <label htmlFor="password2">Repetir password</label>
+          <label htmlFor="password2">Repetir contraseña</label>
           <input type="password" id="password2" name="password2"></input>
         </fieldset>
         <fieldset class="registrop">
+          <label htmlFor="foto">Foto</label>
           <input
             type="file"
             id="foto"
@@ -90,9 +91,6 @@ export const UsuarioYoPage = () => {
         <button class="bform">Actualizar</button>
         {/* {errorFormulario ? <p>{errorFormulario}</p> : null} */}
       </form>
-      <h1>Perfil de usuario</h1>
-      <p>Nombre de usuario: {user.nombreUsuario}</p>
-      <p>Email: {user.email}</p>
     </section>
   );
 };

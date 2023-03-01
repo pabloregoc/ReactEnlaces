@@ -5,8 +5,6 @@
   font-family: "Sora", "Noto Sans", sans-serif;
 }
 header {
-  border: 3px #0099cc;
-  border-style: solid;
   background-image: url("/src/images/chain.jpg");
   background-size: cover;
 }
@@ -22,6 +20,7 @@ header > h1 {
 .nologli {
   display: flex;
   justify-content: center;
+  margin-bottom: 5px;
 }
 header > nav {
   display: flex;
@@ -36,8 +35,8 @@ header > nav {
   justify-content: center;
 }
 .ppic {
-  width: 5vw;
-  height: 5vw;
+  width: 20%;
+  height: 20%;
   border-radius: 100%;
   border: 3px solid black;
 }
@@ -86,10 +85,12 @@ button:hover {
   font-size: 1.5vw;
 }
 .boton {
-  font-size: 1.5vw;
-  margin: 5px;
-  width: 25vw;
-  max-height: 7vh;
+  font-size: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 30vw;
+  height: 3.5vh;
+  padding: 0px;
 }
 form {
   display: flex;
@@ -121,4 +122,7 @@ form {
 ul {
   width: 60vw;
   list-style: none;
+}
+a {
+  color: black;
 }

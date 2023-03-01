@@ -90,7 +90,12 @@ button:hover {
   margin-right: 5px;
   width: 30vw;
   height: 3.5vh;
-  padding: 0px;
+  padding: 1px;
+  box-shadow: 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
 }
 form {
   display: flex;

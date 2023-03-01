@@ -65,7 +65,7 @@ button {
   text-align: center;
   display: inline-block;
   font-size: 8px;
-  margin: 2px 1px;
+  margin: 4px 1px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
@@ -83,11 +83,16 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+.boton {
+  margin: 5px;
+  width: 15vw;
+  height: 7vh;
+}
 form {
   display: flex;
   flex-direction: column;
-  max-width: 50vw;
-  min-width: 50vw;
+  max-width: 70vw;
+  min-width: 70vw;
 }
 #titulo {
   width: 100%;
@@ -96,12 +101,13 @@ form {
   width: 100%;
   border: 0;
   outline: 0;
-  font-size: 16px;
+  font-size: 1.5vw;
   border-radius: 16px;
   padding: 16px;
   background-color: #ebecf0;
   text-shadow: 1px 1px 0 #fff;
   box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
+  font-family: "Montserrat", sans-serif;
 }
 #url {
   width: 50vw;
@@ -110,5 +116,11 @@ form {
   width: 100%;
 }
 ul {
-  width: 60vh;
+  width: 60vw;
+  list-style: none;
+}
+@media (min-width: 600px) {
+  form {
+    width: 100vw;
+  }
 }

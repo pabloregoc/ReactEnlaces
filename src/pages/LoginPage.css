@@ -9,15 +9,17 @@ select,
 textarea,
 button {
   font-family: "Montserrat", sans-serif;
-  letter-spacing: -0.2px;
-  font-size: 16px;
+  margin-bottom: 5px;
+  font-size: 1.5vw;
 }
 
 div,
 p {
   color: #838692;
   text-shadow: 1px 1px 1px #fff;
+  margin-bottom: 10px;
 }
+
 #conectado {
   color: #0a0a0a;
   text-shadow: 1px 1px 1px #fff;
@@ -40,7 +42,7 @@ button,
 input {
   border: 0;
   outline: 0;
-  font-size: 16px;
+  font-size: 1.5vw;
   border-radius: 16px;
   padding: 16px;
   background-color: #ebecf0;

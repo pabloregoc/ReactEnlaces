@@ -62,7 +62,7 @@ export const UsuarioYoPage = () => {
           ></input>
         </fieldset>
         <fieldset class="registrop">
-          <label htmlFor="password1">password</label>
+          <label htmlFor="password1">Password</label>
           <input type="password" id="password1" name="password1"></input>
         </fieldset>
         <fieldset class="registrop">

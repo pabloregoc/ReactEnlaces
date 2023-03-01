@@ -10,3 +10,6 @@ header > nav {
   font-size: 1.5vw;
   margin-bottom: 2vw;
 }
+header {
+  max-height: 25%;
+}

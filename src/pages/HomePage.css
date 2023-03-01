@@ -29,6 +29,7 @@ header > nav {
   justify-content: center;
   font-size: 15vw;
   margin-bottom: 2vw;
+  max-height: 15%;
 }
 .avatar {
   display: flex;
@@ -80,13 +81,15 @@ button:hover {
   color: #5b6380;
 }
 .botones {
-  display: flex;
+  display: block;
   justify-content: center;
+  font-size: 1.5vw;
 }
 .boton {
+  font-size: 1.5vw;
   margin: 5px;
-  width: 15vw;
-  height: 7vh;
+  width: 25vw;
+  max-height: 7vh;
 }
 form {
   display: flex;
@@ -118,9 +121,4 @@ form {
 ul {
   width: 60vw;
   list-style: none;
-}
-@media (min-width: 600px) {
-  form {
-    width: 100vw;
-  }
 }

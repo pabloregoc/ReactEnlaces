@@ -93,6 +93,14 @@ form {
 }
 #descripcion {
   width: 50vw;
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ebecf0;
+  text-shadow: 1px 1px 0 #fff;
+  box-shadow: inset 1px 1px 2px #babecc, inset -1px -1px 2px #fff;
 }
 #url {
   width: 50vw;

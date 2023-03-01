@@ -38,15 +38,15 @@ export const NewEnlace = ({ addEnlace }) => {
         ></input>
       </fieldstet>
       <fieldstet class="descripcion">
-        <label htmlFor="textarea" class="placeholder"></label>
-        <input
+        <label htmlFor="textarea" id="textarea" class="placeholder"></label>
+        <textarea
           type="text"
           id="descripcion"
           name="descripcion"
           class="placeholder"
           placeholder="Descripción"
           required
-        ></input>
+        ></textarea>
       </fieldstet>
       <fieldstet class="url">
         <label htmlFor="text" class="placeholder"></label>

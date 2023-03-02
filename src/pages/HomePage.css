@@ -136,7 +136,7 @@ input[type="file"]::file-selector-button {
   margin-left: 5px;
   margin-right: 5px;
   width: 18vw;
-  height: 4vh;
+  height: 44vh;
   padding: 1px;
   box-shadow: 5px 5px 20px #babecc;
   transition: all 0.2s ease-in-out;

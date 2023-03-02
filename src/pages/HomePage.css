@@ -11,7 +11,7 @@ header {
 header > h1 {
   display: flex;
   justify-content: center;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 .nolog {
   font-size: 3vw;
@@ -34,8 +34,8 @@ header > nav {
   justify-content: center;
 }
 .ppic {
-  width: 20%;
-  height: 20%;
+  width: 12%;
+  height: 12%;
   border-radius: 100%;
   border: 3px solid black;
 }
@@ -83,10 +83,10 @@ button:hover {
   font-size: 1.5vw;
 }
 .boton {
-  font-size: 99%;
+  font-size: 90%;
   margin-left: 5px;
   margin-right: 5px;
-  width: 30vw;
+  width: 20vw;
   height: 3.9vh;
   padding: 1px;
   box-shadow: 5px 5px 20px #babecc;

@@ -1,7 +1,7 @@
 header > h1 {
   display: flex;
   justify-content: center;
-  font-size: 4.5vw;
+  font-size: 3vw;
 }
 header > nav {
   display: flex;

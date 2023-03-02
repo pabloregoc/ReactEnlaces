@@ -66,7 +66,7 @@ button {
   display: inline-block;
   font-size: 8px;
   margin: 4px 1px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;  /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
   text-decoration: none;
@@ -130,4 +130,18 @@ ul {
 }
 a {
   color: black;
+}
+input[type="file"]::file-selector-button {
+  font-size: 100%;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 18vw;
+  height: 4vh;
+  padding: 1px;
+  box-shadow: 5px 5px 20px #babecc;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  color: #5b6380;;
 }

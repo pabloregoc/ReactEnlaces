@@ -37,7 +37,7 @@ header > nav {
   width: 12%;
   height: 12%;
   border-radius: 100%;
-  border: 3px solid black;
+  border: 0.15vw solid black;
 }
 article > img {
   max-width: 20vw;

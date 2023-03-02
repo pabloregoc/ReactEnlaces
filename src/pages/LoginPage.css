@@ -22,9 +22,10 @@ p {
 
 #conectado {
   color: #0a0a0a;
-  text-shadow: 1px 1px 1px #fff;
+  text-shadow: 1.3px 1.3px 1.3px #fff;
   display: flex;
   justify-content: center;
+  font-weight: bold;
 }
 
 form {

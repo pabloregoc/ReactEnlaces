@@ -75,7 +75,7 @@ const RegisterPage = () => {
             onChange={(e) => setPassword2(e.target.value)}
           ></input>
         </fieldset>
-        <button class="bform">Resgistrarme</button>
+        <button class="bform">Registrarme</button>
         {error ? <p>{error}</p> : null}
       </form>
     </section>

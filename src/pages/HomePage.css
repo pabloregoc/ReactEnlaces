@@ -8,6 +8,9 @@ header {
   background-image: url("/src/images/chain.jpg");
   background-size: cover;
 }
+.titulo{
+  font-family: 'Righteous', cursive;
+}
 header > h1 {
   display: flex;
   justify-content: center;
@@ -15,12 +18,14 @@ header > h1 {
   margin: 0.5vw;
 }
 .nolog {
-  font-size: 3vw;
+  font-size: 1.7vw;
+  margin-bottom: 10px;
 }
 .nologli {
   display: flex;
   justify-content: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  
 }
 header > nav {
   display: flex;

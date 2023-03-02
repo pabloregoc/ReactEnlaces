@@ -36,11 +36,11 @@ const Auth = () => {
   ) : (
     <ul class="nolog">
       <li class="nologli">
-        <Link to={"/register"}>Registro</Link>
+        <Link to={"/register"}>Nuevo Usuario</Link>
       </li>
 
       <li class="nologli">
-        <Link to={"/login"}>Acceso</Link>
+        <Link to={"/login"}>Acceso Usuarios Registrados</Link>
       </li>
     </ul>
   );

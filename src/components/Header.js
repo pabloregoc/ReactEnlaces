@@ -4,8 +4,8 @@ import Auth from "./Auth";
 const Header = () => {
   return (
     <header>
-      <h1>
-        <Link to={"/"}>AppEnlaces</Link>
+      <h1 >
+        <Link class="titulo" to={"/"}>AppEnlaces</Link>
       </h1>
       <nav>
         <Auth />
